@@ -1,0 +1,23 @@
+{
+  "name": "taskapp-node-andrew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahpreetk/taskapp-node-andrew.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahpreetk/taskapp-node-andrew/issues"
+  },
+  "homepage": "https://github.com/shahpreetk/taskapp-node-andrew#readme",
+  "dependencies": {
+    "mongodb": "^3.6.4"
+  }
+}
