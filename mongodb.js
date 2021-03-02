@@ -6,8 +6,8 @@
 
 const { MongoClient, ObjectID } = require("mongodb");
 
-const id = new ObjectID();
-console.log(id.getTimestamp());
+// const id = new ObjectID();
+// console.log(id.getTimestamp());
 
 const connectionURL = "mongodb://127.0.0.1:27017";
 const databaseName = "task-manager";
@@ -22,63 +22,14 @@ MongoClient.connect(
 
     const db = client.db(databaseName);
 
-    db.collection("users").insertOne(
-      {
-        _id: id,
-        name: "Alec",
-        age: 24,
-      },
-      (error, result) => {
+    db.collection("users").findOne(
+      { _id: new ObjectID("603e1f2ac7e42d14073f0466") },
+      (error, user) => {
         if (error) {
-          return console.log("Unable to insert user");
+          return console.log("error");
         }
-
-        console.log(result.ops);
+        console.log(user);
       }
     );
-
-    // db.collection("users").insertMany(
-    //   [
-    //     {
-    //       name: "Jen",
-    //       age: 19,
-    //     },
-    //     {
-    //       name: "Gunther",
-    //       age: 27,
-    //     },
-    //   ],
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log("Unable to insert documents");
-    //     }
-
-    //     console.log(result.ops);
-    //   }
-    // );
-
-    // db.collection("tasks").insertMany(
-    //   [
-    //     {
-    //       description: "Organise work table",
-    //       completed: true,
-    //     },
-    //     {
-    //       description: "Buy lights",
-    //       completed: false,
-    //     },
-    //     {
-    //       description: "Buy Yoga mat",
-    //       completed: false,
-    //     },
-    //   ],
-    //   (error, result) => {
-    //     if (error) {
-    //       return console.log("Unable to insert documents");
-    //     }
-
-    //     console.log(result.ops);
-    //   }
-    // );
   }
 );
