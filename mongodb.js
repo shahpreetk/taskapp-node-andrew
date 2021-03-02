@@ -16,18 +16,62 @@ MongoClient.connect(
 
     const db = client.db(databaseName);
 
-    db.collection("users").insertOne(
-      {
-        name: "Preet",
-        age: 21,
-      },
-      (error, result) => {
-        if (error) {
-          return console.log("Unable to insert user");
-        }
+    // db.collection("users").insertOne(
+    //   {
+    //     name: "Preet",
+    //     age: 21,
+    //   },
+    //   (error, result) => {
+    //     if (error) {
+    //       return console.log("Unable to insert user");
+    //     }
 
-        console.log(result.ops);
-      }
-    );
+    //     console.log(result.ops);
+    //   }
+    // );
+
+    // db.collection("users").insertMany(
+    //   [
+    //     {
+    //       name: "Jen",
+    //       age: 19,
+    //     },
+    //     {
+    //       name: "Gunther",
+    //       age: 27,
+    //     },
+    //   ],
+    //   (error, result) => {
+    //     if (error) {
+    //       return console.log("Unable to insert documents");
+    //     }
+
+    //     console.log(result.ops);
+    //   }
+    // );
+
+    // db.collection("tasks").insertMany(
+    //   [
+    //     {
+    //       description: "Organise work table",
+    //       completed: true,
+    //     },
+    //     {
+    //       description: "Buy lights",
+    //       completed: false,
+    //     },
+    //     {
+    //       description: "Buy Yoga mat",
+    //       completed: false,
+    //     },
+    //   ],
+    //   (error, result) => {
+    //     if (error) {
+    //       return console.log("Unable to insert documents");
+    //     }
+
+    //     console.log(result.ops);
+    //   }
+    // );
   }
 );
