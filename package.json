@@ -19,6 +19,7 @@
   "homepage": "https://github.com/shahpreetk/taskapp-node-andrew#readme",
   "dependencies": {
     "mongodb": "^3.6.4",
-    "mongoose": "^5.11.18"
+    "mongoose": "^5.11.18",
+    "validator": "^13.5.2"
   }
 }
