@@ -23,6 +23,17 @@ const User = mongoose.model("User", {
       }
     },
   },
+  password: {
+    type: String,
+    required: true,
+    trim: true,
+    minLength: 7,
+    validate(value) {
+      if (value.toLowerCase().includes("password")) {
+        throw new Error('Password cannot include "password"');
+      }
+    },
+  },
   age: {
     type: Number,
     default: 0,
@@ -58,8 +69,9 @@ const Task = mongoose.model("Task", {
 //   });
 
 const me = new User({
-  name: "    Preet    ",
-  email: "PREET@EMAIL.COM",
+  name: "    Pranj    ",
+  email: "PRanj@EMAIL.COM",
+  password: "12pass34",
 });
 
 me.save()
