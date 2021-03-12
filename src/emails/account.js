@@ -10,9 +10,9 @@ const sendWelcomeEmail = (email, name) => {
       subject: "Thanks for joining us!",
       text: `Welcome to the app, ${name}. Hope you like it!`,
     })
-    .then(() => {
-      console.log("Signup Email sent");
-    })
+    // .then(() => {
+    //   console.log("Signup Email sent");
+    // })
     .catch((error) => {
       console.error(error.body);
     });
@@ -26,9 +26,9 @@ const sendCancellationEmail = ({ email, name }) => {
       subject: "We'll miss you!",
       text: `We are sorry to see you go, ${name}. See you soon!`,
     })
-    .then(() => {
-      console.log("Exit Email sent");
-    })
+    // .then(() => {
+    //   console.log("Exit Email sent");
+    // })
     .catch((error) => {
       console.error(error);
     });
